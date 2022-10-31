@@ -1,0 +1,58 @@
+#include <iostream>
+#include <ctime> // Biblioteca tempo
+using namespace std;
+
+char tabuleiro[6][7];  
+
+void inicia_tabuleiro(void);
+void mostra_tabuleiro(void);
+
+
+// Pergunta e regista o nome dos jogadores.
+int main (){
+string jogador_1, jogador_2;
+int numero_jogadores, nivel;    
+cout << "Bem vindos ao jogo 4 em linha! \n";
+while ((numero_jogadores != 1)||(numero_jogadores != 2)){
+cout << "Quantos jogadores irão jogar? (Especifique 1 ou 2 jogadores) ";
+cin >> numero_jogadores;
+
+// se for 1, o outro é o computador
+if (numero_jogadores == 1){
+   cout << "Qual o nome do jogador 1? "; 
+   cin >> jogador_1;
+   break;
+}
+else if (numero_jogadores == 2){
+cout << "Qual o nome do jogador 1? ";
+cin >> jogador_1;
+cout << "Qual o nome do jogador 2? ";
+cin >> jogador_2;
+ break;
+}
+else {
+cout << "Você digitou um número errado " << endl;  //se a pessoa digitar algo diferente de número, o progama trava!!! devo mudar?
+continue;
+}}
+
+// Registra a data e hora de início do jogo
+    time_t tt;
+    struct tm * ti;
+    time (&tt);
+    ti = localtime(&tt);
+   
+  // Mostra a data e hora na tela
+  //cout << "Day = "  << asctime(ti);
+  
+// Seleciona o nível de inteligência do computador  
+if (numero_jogadores == 1){
+while ((nivel != 1) || (nivel != 2)||(nivel != 3)){
+    cout << "O outro jogador será o computador! Selecione por favor o nível de inteligência do computador (1, 2 ou 3): " << endl;
+    cin >> nivel ;
+    if ((nivel == 1)|| (nivel == 2)|| (nivel == 3)){
+    break;}
+    else {
+        cout << "Você digitou um nível errado " << endl;
+        continue;
+    }
+    }}}
